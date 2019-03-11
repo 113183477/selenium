@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="Day4.ZuoyeA">
+        <methods>
+          <include name="caozuo6"/>
+          <include name="caozuo5"/>
+          <include name="caozuo4"/>
+          <include name="caozuo8"/>
+          <include name="caozuo3"/>
+          <include name="caozuo2"/>
+          <include name="caozuo1"/>
+        </methods>
+      </class> <!-- Day4.ZuoyeA -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

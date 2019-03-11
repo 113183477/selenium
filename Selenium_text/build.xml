@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- one project with multiple targets  -->
+<project name="test" default="run" basedir=".">
+	<!-- paths used -->
+	<property name="src.dir" value="src" />
+	<property name="dest.dir" value="build" />
+	<property name="dest.report" value="report" />
+
+	<path id="jarfile">
+		<fileset dir="lib" includes="selenium-server-standalone-2.53.0.jar" />
+		<fileset dir="lib" includes="testng-6.5.1.jar" />
+	</path>
+
+	<!-- delete the output folder if it exists -->
+	<delete dir="${dest.dir}" failonerror="false" />
+	<!-- create the output folder -->
+	<mkdir dir="${dest.dir}" />
+	<mkdir dir="${dest.report}" />
+
+	<!-- target to compile all test classes out -->
+	<target name="build">
+
+		<!-- do copy -->
+
+		<!-- compile -->
+		<javac srcdir="${src.dir}" destdir="${dest.dir}" encoding="gbk" debug="true" fork="yes">
+			<classpath refid="jarfile" />
+		</javac>
+
+	</target>
+
+	<!-- define the TestNG task -->
+
+	<taskdef name="testng" classname="com.beust.testng.TestNGAntTask" classpathref="jarfile" />
+
+	<!-- run test -->
+	<target name="run" depends="build">
+		<testng classpathref="jarfile" outputDir="${dest.report}" haltOnFailure="false">
+			<classfileset dir="${dest.dir}" includes="*.class" />
+			<classpath>
+				<pathelement path="${dest.dir}" />
+			</classpath>
+			<xmlfileset dir="${basedir}" includes="testeg.xml" />
+		</testng>
+	</target>
+
+</project>
