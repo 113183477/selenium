@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="Day4.Zuoye01Test"/>
+      <class name="(default package).baidu"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

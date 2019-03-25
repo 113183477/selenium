@@ -8,6 +8,16 @@
           <include name="login"/>
         </methods>
       </class> <!-- Testcase.logindl -->
+      <class name="Testcase.xxtk">
+        <methods>
+          <include name="xztkss"/>
+        </methods>
+      </class> <!-- Testcase.xxtk -->
+      <class name="Testcase.xinzen">
+        <methods>
+          <include name="xinzenxs"/>
+        </methods>
+      </class> <!-- Testcase.xinzen -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
